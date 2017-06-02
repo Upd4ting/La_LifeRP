@@ -134,9 +134,14 @@ function hasAccount(identifier, callback)
 	local result = MySQL.Async.fetchAll("SELECT * FROM users WHERE identifier = @name", {['@name'] = identifier}, function (result)
 		if(result[1] ~= nil) then
 			callback(true)
+<<<<<<< HEAD
 		else
 			callback(false)
 		end
+=======
+		end
+		callback(false)
+>>>>>>> upstream/master
 	end)
 end
 
