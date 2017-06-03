@@ -201,5 +201,7 @@ function Player:getJob()
 end
 
 function Player:setJob(param)
-	self.job = param
+	TriggerEvent("es:setPlayerData", self.source, "job", param, function(response, success)
+		self.job = param
+	end)
 end
